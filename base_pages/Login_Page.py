@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 
 class Login_Page:
     """Page Objects"""
+    logout_btn_xpath = "//a[text()='Log out']"
     login_welcome_text_xpath = "//a[text()='Welcome Nitish']"
     textbox_username_id = 'loginusername'
     textbox_password_id = 'loginpassword'
@@ -60,3 +61,6 @@ class Login_Page:
     def login_valid_user_welcome_text(self):
         welcome_text=self.driver.find_element(By.XPATH,self.login_welcome_text_xpath).text
         return welcome_text
+
+    def click_on_logout_btn(self):
+        self.driver.find_element(By.XPATH,self.logout_btn_xpath).click()
